@@ -1,0 +1,496 @@
+:root {
+  --primary-color: #0099FF;
+  --secondary-color: #004F8C;
+  --third-color: #0073CC;
+  --fourth-color: #D72631;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+  --font-family: sans-serif, sans-serif, Arial, Helvetica;
+  --font-size-base: 16px;
+  --accent: #d64545; /* color marcador */
+  --line-width: 6px;
+  --card-bg: #f7f7f7;
+  --card-radius: 10px;
+  --card-padding: 18px;
+  --max-width: 1000px;
+  --gap-vertical: 48px;
+  --shadow: 0 1px 2px #00000060;
+}
+
+/* INDEX HTML */
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+  background-color: #fff;
+  height: 50px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:#000000;
+  background-color: #fff;
+  font-size: var(--font-size-base);
+  gap: 40px;
+  text-shadow: var(--shadow);
+} 
+
+.nav-links a:hover, 
+.nav-links a:focus {
+  color: var(--primary-color);
+} 
+
+.nav-links a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+body{
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background:#fff;
+  color:#333;
+  line-height:1;
+  padding: 10px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1.5px solid var(--black-color);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  font-weight: bold;
+} 
+
+button:hover, 
+button:focus {
+  background-color: var(--third-color);
+} 
+
+button:active {
+  transform: scale(0.96);
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+  overflow: hidden;
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color);
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  max-width: 650px;
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.hero-overlay h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+}
+
+.hero-overlay a {
+  display: inline-block;
+}
+
+.principios-dojo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.principios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.principio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #6ac3ffa4;
+  border-radius: 8px;
+  border: 1.5px solid var(--black-color);
+  padding: 30px 10px;
+  gap: 15px;
+}
+
+.principio svg {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+.nuestros-programas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+  background-color: var(--primary-color);
+  color: var(--black-color);
+}
+
+.programas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.programa {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  border-radius: 8px;
+  border: 1.5px solid black;
+  padding: 30px 10px;
+  gap: 15px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  flex: 1 1 320px;
+  min-height: 200px;
+  font-size: var(--font-size-base);
+}
+
+.programa button {
+  line-height: 1.35;
+}
+
+.programa p {
+  margin: 0 auto;
+}
+
+.programa-karate { 
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url(./images/programa-karate.jpg);
+}
+
+.programa-kickboxing {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url(./images/programa-kickboxing.jpg);
+}
+
+.programa-infantiles {
+  background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.75),
+      rgba(0, 0, 0, 0.75)
+    ),
+    url(./images/programa-infantiles.jpg);
+}
+
+.testimonios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.testimonios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.testimonio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #6ac3ffa4;
+  border-radius: 8px;
+  border: 1.5px solid var(--black-color);
+  padding: 30px 10px;
+  gap: 15px;
+  flex: 1 1 320px;
+  max-height: 300px;
+  font-size: var(--font-size-base);
+}
+
+.testimonio img {
+  max-width: 100px;
+}
+
+.testimonio-categoria {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.cta-index {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  gap: 15px;
+  font-size: var(--font-size-base);
+  border-bottom: 1px solid var(--black-color);
+}
+
+.cta-index button {  
+  max-width: fit-content;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 16px 30px;
+  background-color: var(--primary-color);
+}
+
+.footer-links-legal {
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color:#000000;
+  font-size: var(--font-size-base);
+  text-shadow: var(--shadow);
+  gap: 12px;
+} 
+
+footer p {
+  font-weight: bold;
+}
+
+
+/* DOJO HTML */
+
+
+
+/* contenedor */
+.timeline{
+  display:flex;
+  justify-content:center;
+  padding:40px 20px;
+}
+
+/* lista para poder manejar items fácilmente */
+.timeline-list{
+  position:relative;
+  width:100%;
+  max-width:var(--max-width);
+  list-style:none;
+  padding:20px 0;
+  margin:0 auto;
+  counter-reset: timeline; /* reiniciar contador */
+}
+
+/* línea vertical (centrada) */
+.timeline-list::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  top:0;
+  bottom:0;
+  width:var(--line-width);
+  background:var(--accent); /* si quieres un degradado o fusión */
+  border-radius:3px;
+  z-index:1;
+}
+
+/* item general */
+.timeline-item{
+  position:relative;
+  width:100%;
+  padding:calc(var(--gap-vertical) / 2) 20px;
+  display:flex;
+  align-items: center;
+  padding: 40px 20px;
+  clear:both;
+  counter-increment: timeline; /* contador para los números */
+}
+
+/* colocación de la tarjeta: izquierda o derecha según parity */
+.timeline-item:nth-child(odd){
+  justify-content: flex-start;   /* tarjeta a la izquierda del centro */
+}
+.timeline-item:nth-child(even){
+  justify-content: flex-end;     /* tarjeta a la derecha del centro */
+}
+
+/* marcador circular (número o icono) */
+.timeline-item::after{
+  content: counter(timeline);
+  position: absolute;
+  left: 50%;                  /* centro respecto al contenedor */
+  top: 50%;
+  transform: translate(-50%,-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent,#d64545);
+  color: #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  z-index: 4;                 /* por encima de tarjetas y línea */
+  border: 6px solid #fff;     /* efecto "recorte" sobre la línea */
+  box-shadow: 0 6px 12px rgba(0,0,0,0.12);
+  font-size: 0.9rem;
+}
+
+/* tarjeta */
+.timeline-card{
+  width: 44%;             /* ajusta según tu diseño (40%-48%) */
+  max-width: 420px;
+  background: var(--card-bg,#f7f7f7);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  z-index: 3;             /* encima de la línea */
+}
+
+/* estilo del año */
+.timeline-year{
+  display:block;
+  font-weight:700;
+  margin-bottom:8px;
+  color:#222;
+}
+
+/* párrafo */
+.timeline-card p{
+  margin:0;
+  line-height:1.5;
+  color:#333;
+  font-size:0.95rem;
+}
+
+/* RESPONSIVE: en pantallas pequeñas apilar todo y centrar */
+@media (max-width:800px){
+  .timeline-list::before{ left:20px; transform:none; } /* línea a la izquierda */
+  .timeline-item{ padding-left: 60px; padding-right: 20px; }
+  .timeline-item::after{ left:20px; transform:translateY(-50%); } /* marcador también a la izquierda */
+  .timeline-card{ width: calc(100% - 80px); } /* tarjeta a la derecha del marcador */
+  .timeline-item:nth-child(even) .timeline-card,
+  .timeline-item:nth-child(odd) .timeline-card{
+    margin-left:24px;
+    margin-right:0;
+  }
+}
