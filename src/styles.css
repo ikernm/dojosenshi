@@ -3,13 +3,12 @@
   --secondary-color: #004F8C;
   --third-color: #0073CC;
   --fourth-color: #D72631;
+  --fifth-color: #9cd7ff;
   --white-color: #FFFFFF;
   --black-color: #000000;
   --font-family: sans-serif, sans-serif, Arial, Helvetica;
   --font-size-base: 16px;
-  --accent: #d64545; /* color marcador */
   --line-width: 6px;
-  --card-bg: #f7f7f7;
   --card-radius: 10px;
   --card-padding: 18px;
   --max-width: 1000px;
@@ -17,7 +16,9 @@
   --shadow: 0 1px 2px #00000060;
 }
 
+
 /* INDEX HTML */
+
 
 nav {
   display: flex;
@@ -196,7 +197,7 @@ button:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #6ac3ffa4;
+  background-color: var(--fifth-color);
   border-radius: 8px;
   border: 1.5px solid var(--black-color);
   padding: 30px 10px;
@@ -309,7 +310,7 @@ button:active {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: #6ac3ffa4;
+  background-color: var(--fifth-color);
   border-radius: 8px;
   border: 1.5px solid var(--black-color);
   padding: 30px 10px;
@@ -317,6 +318,7 @@ button:active {
   flex: 1 1 320px;
   max-height: 300px;
   font-size: var(--font-size-base);
+  line-height: 1.5;
 }
 
 .testimonio img {
@@ -382,6 +384,7 @@ button:active {
 
 /* DOJO HTML */
 
+
 .mi-historia {
   display: flex;
   flex-direction: row;
@@ -420,7 +423,7 @@ button:active {
   display: flex;
   flex-wrap: nowrap;
   padding: 40px;
-  gap: 40px;
+  gap: 20px;
 }
 
 .logro {
@@ -429,23 +432,38 @@ button:active {
   flex: 1 1 25%;
   justify-content: flex-start;
   align-items: center;
-  line-height: 1.5;
+  line-height: 1.3;
   white-space: nowrap;
+  padding: 30px 40px;
+  gap: 5px;
 }
 
 .logro h5 {
   font-weight: bold;
 }
 
+.logro svg {
+  width: 50px;
+  height: 50px;
+  background-color: #83cdff;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+}
 
-/* contenedor */
+/* LÍNEA DEL TIEMPO */
+
+.linea-del-tiempo {
+  padding: 40px;
+}
+
 .timeline{
   display:flex;
   justify-content:center;
   padding:40px 20px;
 }
 
-/* lista para poder manejar items fácilmente */
 .timeline-list{
   position:relative;
   width:100%;
@@ -453,10 +471,9 @@ button:active {
   list-style:none;
   padding:20px 0;
   margin:0 auto;
-  counter-reset: timeline; /* reiniciar contador */
+  counter-reset: timeline;
 }
 
-/* línea vertical (centrada) */
 .timeline-list::before{
   content:"";
   position:absolute;
@@ -465,36 +482,33 @@ button:active {
   top:0;
   bottom:0;
   width:var(--line-width);
-  background:var(--accent); /* si quieres un degradado o fusión */
+  background:var(--fourth-color);
   border-radius:3px;
   z-index:1;
 }
 
-/* item general */
 .timeline-item{
   position:relative;
   width:100%;
-  padding:calc(var(--gap-vertical) / 2) 20px;
   display:flex;
   align-items: center;
   padding: 40px 20px;
   clear:both;
-  counter-increment: timeline; /* contador para los números */
+  counter-increment: timeline;
 }
 
-/* colocación de la tarjeta: izquierda o derecha según parity */
 .timeline-item:nth-child(odd){
-  justify-content: flex-start;   /* tarjeta a la izquierda del centro */
-}
-.timeline-item:nth-child(even){
-  justify-content: flex-end;     /* tarjeta a la derecha del centro */
+  justify-content: flex-start;
 }
 
-/* marcador circular (número o icono) */
+.timeline-item:nth-child(even){
+  justify-content: flex-end;
+}
+
 .timeline-item::after{
   content: counter(timeline);
   position: absolute;
-  left: 50%;                  /* centro respecto al contenedor */
+  left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
   width: 44px;
@@ -506,24 +520,23 @@ button:active {
   align-items:center;
   justify-content:center;
   font-weight:700;
-  z-index: 4;                 /* por encima de tarjetas y línea */
-  border: 6px solid #fff;     /* efecto "recorte" sobre la línea */
+  z-index: 4;
+  border: 6px solid #fff;
   box-shadow: 0 6px 12px rgba(0,0,0,0.12);
   font-size: 0.9rem;
 }
 
-/* tarjeta */
 .timeline-card{
-  width: 44%;             /* ajusta según tu diseño (40%-48%) */
-  max-width: 420px;
-  background: var(--card-bg,#f7f7f7);
+  width: 46%;
+  max-width: 600px;
+  background: rgba(236, 236, 236, 0.932);
+  border: 1px solid black;
   border-radius: 10px;
   padding: 18px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-  z-index: 3;             /* encima de la línea */
+  z-index: 3;
 }
 
-/* estilo del año */
 .timeline-year{
   display:block;
   font-weight:700;
@@ -531,7 +544,6 @@ button:active {
   color:#222;
 }
 
-/* párrafo */
 .timeline-card p{
   margin:0;
   line-height:1.5;
@@ -539,8 +551,305 @@ button:active {
   font-size:0.95rem;
 }
 
-/* RESPONSIVE: en pantallas pequeñas apilar todo y centrar */
+.momentos-dojo {
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: 30px;
+}
+
+.momentos-img {
+  max-width: 100%;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  grid-template-areas: "grande top1 top2" "grande ancha ancha";
+}
+.momento{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  display: block;
+}
+
+.momento--grande{ grid-area: grande; }
+.momento--top1{   grid-area: top1; }
+.momento--top2{   grid-area: top2; }
+.momento--ancha{  grid-area: ancha; }
+
+
+/* KARATE.HTML */
+
+
+.hero-karate {
+  width: 100%;
+  height: fit-content;
+  padding: 30px 20px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.hero-karate p {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.content-karate {
+  background-color: var(--white-color);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tecnica-karate {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.tecnica-karate img{
+  height: 200px;
+  width: 200px;
+  border-radius: 15px;
+}
+
+.tecnica-karate:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.texto-karate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.texto-karate h3 {
+  color: var(--fourth-color);
+  margin-bottom: 30px;
+  align-self: center;
+}
+
+.historia-filosofia {
+  background-color: var(--primary-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.historia-filosofia h2 {
+  margin-bottom: 20px;
+}
+
+.historia-filosofia p {
+  width: 90%;
+  margin: 0 auto 20px;
+}
+
+.dojo-kun {
+  display: inline-block;
+  text-align: left;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+  margin: 0; 
+}
+
+.dojo-kun li{
+  margin-bottom: 10px;
+}
+
+.afiliacion {
+  width: 80%;
+  background-color: var(--white-color);
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.img-afiliacion {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.img-afiliacion img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+
+/* KICKBOXING.HTML */
+
+
+.hero-kickboxing {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.hero-kickboxing h2 {
+  margin-bottom: 20px;
+}
+
+.hero-kickboxing p {
+  width: 90%;
+  text-align: center;
+}
+
+.modalidades-kickboxing {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px 0;
+}
+
+.modalidades-kickboxing h3 {
+  margin-bottom: 20px;
+}
+
+.contenedor-modalidades {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.modalidad {
+  background-color: var(--fifth-color);
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: var(--shadow);
+  padding: 20px;
+  flex: 1 1 260px;
+  max-width: 320px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.modalidad p {
+  line-height: 1.2;
+}
+
+.modalidad h4 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.enfoque-competitivo {
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-enfoque-competitivo {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 30px;
+  line-height: 1.2;
+}
+
+.contenedor-enfoque-competitivo img {
+  border-radius: 10px;
+  height: 200px;
+  width: 200px;
+}
+
+.metodo-entrenamiento {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-metodo-entrenamiento {
+  width: 90%;
+  background-color: var(--fifth-color);
+  border-radius: 15px;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+.contenedor-entrenamiento {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.contenedor-boton-kickboxing {
+  width: 100%;
+  background-color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  padding: 30px 30px;
+}
+
+.entrenamiento-kickboxing svg {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow);
+}
+
+.entrenamiento-kickboxing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  line-height: 1.3;
+  padding: 0 30px;
+}
+
+/* RESPONSIVE */
+
+
 @media (max-width:800px){
+
+  /* FOOTER */
 
   .footer-content{
     grid-template-columns: 1fr;
@@ -557,6 +866,8 @@ button:active {
     justify-content: center;
   }
 
+  /* DOJO.HTML */
+
   .mi-historia{
     flex-direction: column;
     text-align: center;
@@ -566,14 +877,31 @@ button:active {
     max-width: 600px;
   }
 
-  .timeline-list::before{ left:20px; transform:none; } /* línea a la izquierda */
-  .timeline-item{ padding-left: 60px; padding-right: 20px; }
-  .timeline-item::after{ left:20px; transform:translateY(-50%); } /* marcador también a la izquierda */
-  .timeline-card{ width: calc(100% - 80px); } /* tarjeta a la derecha del marcador */
-  .timeline-item:nth-child(even) .timeline-card,
-  .timeline-item:nth-child(odd) .timeline-card{
-    margin-left:24px;
-    margin-right:0;
+    /* timeline */
+
+  .timeline-list{
+    padding-left: 25px;
+  }
+
+  .timeline-list::before{
+    left: 1px;
+    transform: none;
+  }
+
+  .timeline-item{
+    padding: 22px 0;
+  }
+
+  .timeline-item::after{
+    left: 1px;
+    top: 28px;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-card{
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
   }
 
 }
