@@ -3,11 +3,11 @@
 
     <head>
 
-        <title>Dojo Senshi</title>
+        <title>Dojo Senshi | Escuela de Karate y Kickboxing</title>
 
         <!-- SEO PARA LA PÁGINA -->
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width" initial-scale=1.0>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Ana Ibarrondo">
         <meta name="title" content="Dojo Senshi - Escuela de Karate en Vitoria">
         <meta name="description" 
@@ -26,20 +26,23 @@
         <meta property="og:image" content="https://dojosenshigym.com/logo-image.jpg">
 
         <!-- CSS + ICONO DE LA WEB -->
-        <link rel="icon" type="image/png" href="./images/icon.png">
-        <link rel="cannonical" href="https://dojosenshigym.com">
-        <link rel="stylesheet" href="./src/reseteo.css">
-        <link rel="stylesheet" href="./src/styles.css">
+        <link rel="icon" type="image/png" href="./assets/images/icon.png">
+        <link rel="canonical" href="https://dojosenshigym.com">
+        <link rel="stylesheet" href="./assets/css/reseteo.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
 
         <!--X CARDS-->
-        <meta name="x:card" content="summary_large_image">
-        <meta name="x:title" content="[Dojo Karate - Vitoria | Dojo Senshi]">
-        <meta name="x:description" content="Senshi Dojo es una escuela de karate donde se transmiten los valores tradicionales.">
-        <meta name="x:image" content="https://dojosenshigym.com/logo-image.jpg">
-        <meta name="x:site" content="@dojosenshigym">
+        <meta name="twiter:card" content="summary_large_image">
+        <meta name="twitter:title" content="[Dojo Karate - Vitoria | Dojo Senshi]">
+        <meta name="twitter:description" content="Senshi Dojo es una escuela de karate donde se transmiten los valores tradicionales.">
+        <meta name="twitter:image" content="https://dojosenshigym.com/logo-image.jpg">
+        <meta name="twitter:site" content="@dojosenshigym">
 
         <!--PRIVACIDAD--> 
         <meta name="referrer" content="strict-origin-when-cross-origin">
+
+        <!--JAVASCRIPT--> 
+        <script src="./assets/js/index.js" defer></script>
 
     </head>
 
@@ -48,23 +51,27 @@
         <header>
 
             <nav>
-
                 <div class="logo">
-                    <a href="index.html">
-                        <img src="./images/icon.png" alt="Logo Dojo Senshi">
-                    </a>
+                    <a href="index.html"><img src="./assets/images/icon.png" alt="Logo Dojo Senshi"></a>
                 </div>
 
-                <ul class="nav-links">
-                    <li><a href="index.html" class="active">Inicio</a></li>
-                    <li><a href="./src/dojo.html">Dojo</a></li>
-                    <li><a href="./src/karate.html">Karate</a></li>
-                    <li><a href="./src/kickboxing.html">Kickboxing</a></li>
-                    <li><a href="./src/horarios-precios.html">Horarios y Precios</a></li>
-                    <li><a href="./src/contacto.html">Contacto</a></li>
-                </ul>
+                <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 
+                <ul class="nav-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="./pages/dojo.html">Dojo</a></li>
+                    <li><a href="./pages/karate.html">Karate</a></li>
+                    <li><a href="./pages/kickboxing.html">Kickboxing</a></li>
+                    <li><a href="./pages/horarios-precios.html">Horarios y Precios</a></li>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
+                </ul>
             </nav>
+
+            <div class="nav-overlay"></div>
 
         </header>
 
@@ -73,7 +80,7 @@
             <section class="hero">
 
                 <video class="hero-video" autoplay muted loop playsinline >
-                    <source src="./images/main-video.mp4" type="video/mp4" alt="clase de karate en dojo senshi">
+                    <source src="./assets/images/main-video.mp4" type="video/mp4" aria-label="Clase de karate en Dojo Senshi">
                 </video>
 
                 <div class="hero-overlay">
@@ -81,7 +88,7 @@
                     <h1>Dojo Senshi</h1>
                     <p>Forja tu carácter. Entrena cuerpo y mente.</p>
 
-                    <button class="btn-reserva-inicio" onclick="window.location.href='./src/contacto.html'"> 
+                    <button class="btn-reserva-inicio" onclick="window.location.href='./pages/contacto.html'">
                         Reserva tu clase gratuita
                     </button>
 
@@ -138,7 +145,7 @@
 
                 </div>
 
-                <button onclick="window.location.href='./src/horarios-precios.html'">
+                <button onclick="window.location.href='./pages/horarios-precios.html'">
                     Explora nuestras clases
                 </button>
 
@@ -154,7 +161,7 @@
                     <div class="programa programa-karate">
                         <h4>Karate</h4>
                         <p>Domina el arte tradicional del Karate, enfocado en la disciplina, técnica y autodefensa.</p>
-                        <button onclick="window.location.href='./src/karate.html'">
+                        <button onclick="window.location.href='./pages/karate.html'">
                             Saber más
                         </button>
                     </div>
@@ -162,7 +169,7 @@
                     <div class="programa programa-kickboxing">
                         <h4>Kickboxing</h4>
                         <p>Entrenamiento de alta intensidad que combina técnicas de boxeo y patadas.</p>
-                        <button onclick="window.location.href='./src/kickboxing.html'">
+                        <button onclick="window.location.href='./pages/kickboxing.html'">
                             Saber más
                         </button>
                     </div>
@@ -170,7 +177,7 @@
                     <div class="programa programa-infantiles">
                         <h4>Clases Infantiles</h4>
                         <p>Un ambiente seguro y divertido para que los niños aprendan artes marciales, disciplina y respeto.</p>
-                        <button onclick="window.location.href='./src/contacto.html'">
+                        <button onclick="window.location.href='./pages/contacto.html'">
                             Saber más
                         </button>
                     </div>
@@ -188,7 +195,7 @@
 
                     <div class="testimonio">
 
-                        <img src="./images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
+                        <img src="./assets/images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
                         <p>"Dojo Senshi me ha enseñado el valor de la perseverancia. Los intructores son increíbles y la comunidad es muy acogedora. ¡He ganado confianza y fuerza!"</p>
                         <h4>Ana G.</h4>
                         <p class="testimonio-categoria">Alumna de Karate</p>
@@ -197,7 +204,7 @@
 
                     <div class="testimonio">
 
-                        <img src="./images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
+                        <img src="./assets/images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
                         <p>"El kickboxing aquí es de otro nivel. Es el mejor desestresante después de un largo día de trabajo. He mejorado mi condición física y mental."</p>
                         <h4>Carlos R.</h4>
                         <p class="testimonio-categoria">Alumno de Kickboxing</p>
@@ -206,7 +213,7 @@
 
                     <div class="testimonio">
 
-                        <img src="./images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
+                        <img src="./assets/images/testimonio-1.png" alt="Testimonio sobre el Dojo Senshi">
                         <p>"Mi hijo está en las clases infantiles y le encanta. Ha aprendido a ser más disciplinado y respetuoso. Recomiendo Dojo Senshi a todos los padres."</p>
                         <h4>Sofía M.</h4>
                         <p class="testimonio-categoria">Madre de alumno</p>
@@ -222,7 +229,7 @@
                 <h3>¿Listo para comenzar tu viaje marcial?</h3>
                 <p>Únete a Dojo Senshi hoy y descubre tu verdadero potencial.</p>
 
-                <button onclick="window.location.href='./src/contacto.html'">
+                <button onclick="window.location.href='./pages/contacto.html'">
                     Inscríbete ahora
                 </button>
                 
@@ -234,9 +241,9 @@
             <div class="footer-content">
                 <p>Dojo Senshi</p>
                 <ul class="footer-links-legal">
-                    <li><a href="./src/aviso-legal.html">Aviso Legal</a></li>
-                    <li><a href="./src/politica-privacidad.html">Política de Privacidad</a></li>
-                    <li><a href="./src/politica-cookies.html">Política de Cookies</a></li>
+                    <li><a href="./pages/aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="./pages/politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="./pages/politica-cookies.html">Política de Cookies</a></li>
                 </ul>
                 <p>&copy; 2025 Dojo Senshi. Todos los derechos reservados.</p>
             </div>

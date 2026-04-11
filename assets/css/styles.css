@@ -1,0 +1,1958 @@
+/* VARIABLES */
+
+:root {
+  --primary-color:    #0099FF;
+  --secondary-color:  #004F8C;
+  --third-color:      #0073CC;
+  --fourth-color:     #D72631;
+  --fifth-color:      #9cd7ff;
+  --white-color:      #FFFFFF;
+  --black-color:      #000000;
+  --gray-light:       #f5f5f5;
+  --gray-mid:         #eaeaea;
+  --shadow-sm:        0 1px 2px rgba(0, 0, 0, 0.38);
+  --shadow-md:        0 6px 14px rgba(0, 0, 0, 0.18);
+  --shadow-lg:        0 6px 18px rgba(0, 0, 0, 0.06);
+  --font-family:      Arial, Helvetica, sans-serif;
+  --font-size-base:   16px;
+  --card-radius:      10px;
+  --max-width:        1000px;
+}
+
+
+/* RESET BASE */
+
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background: var(--white-color);
+  color: #333;
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+h1 { font-size: 2.5rem;  font-weight: bold; }
+h2 { font-size: 1.5rem;  font-weight: bold; }
+h3 { font-size: 1.25rem; font-weight: bold; }
+h4 { font-size: 1rem;    font-weight: bold; }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border: 1.5px solid var(--black-color);
+  padding: 12px 18px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+button:hover,
+button:focus {
+  background-color: var(--third-color);
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+
+/* NAVEGACIÓN */
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: var(--white-color);
+  min-height: 50px;
+}
+
+.logo img {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: var(--font-size-base);
+}
+
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--primary-color);
+}
+
+.nav-links a.active {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+
+/* FOOTER */
+
+
+.footer-content {
+  background-color: var(--primary-color);
+  color: var(--black-color);
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 12px 24px;
+  text-align: center;
+}
+
+.footer-content > p:first-child {
+  justify-self: start;
+  text-align: left;
+}
+
+.footer-content > p:last-child {
+  justify-self: end;
+  text-align: right;
+}
+
+.footer-links-legal {
+  justify-self: center;
+  display: flex;
+  gap: 18px;
+}
+
+.footer-links-legal a {
+  white-space: nowrap;
+  text-decoration: underline;
+}
+
+
+/* INDEX — HERO */
+
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 380px;
+  overflow: hidden;
+  background-color: var(--black-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  max-width: 650px;
+  color: var(--white-color);
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.hero-overlay h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+
+/* 
+   =====================================================
+   INDEX — PRINCIPIOS
+   ===================================================== 
+*/
+
+.principios-dojo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+  text-align: center;
+}
+
+.principios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.principio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--fifth-color);
+  border: 1.5px solid var(--black-color);
+  border-radius: 8px;
+  padding: 30px 10px;
+  gap: 15px;
+}
+
+.principio svg {
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  padding: 3px;
+}
+
+
+/* 
+   =====================================================
+   INDEX — PROGRAMAS
+   ===================================================== 
+*/
+
+.nuestros-programas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+  width: 100%;
+  background-color: var(--primary-color);
+  text-align: center;
+}
+
+.programas-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.programa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--white-color);
+  border: 1.5px solid var(--black-color);
+  border-radius: 8px;
+  padding: 30px 10px;
+  gap: 15px;
+  background-size: cover;
+  background-position: center;
+  flex: 1 1 320px;
+  min-height: 200px;
+  line-height: 1.35;
+}
+
+.programa-karate {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url(../images/programa-karate.jpg);
+}
+
+.programa-kickboxing {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url(../images/programa-kickboxing.jpg);
+}
+
+.programa-infantiles {
+  background-image:
+    linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
+    url(../images/programa-infantiles.jpg);
+}
+
+
+/* 
+   =====================================================
+   INDEX — TESTIMONIOS
+   ===================================================== 
+*/
+
+.testimonios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  gap: 20px;
+  text-align: center;
+}
+
+.testimonios-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.testimonio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: var(--fifth-color);
+  border: 1.5px solid var(--black-color);
+  border-radius: 8px;
+  padding: 30px 10px;
+  gap: 15px;
+  flex: 1 1 320px;
+  max-height: 300px;
+  line-height: 1.5;
+}
+
+.testimonio img {
+  max-width: 100px;
+}
+
+.testimonio-categoria {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+
+/* 
+   =====================================================
+   INDEX — CTA
+   ===================================================== 
+*/
+
+.cta-index {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 20px;
+  gap: 15px;
+  border-bottom: 1px solid var(--black-color);
+}
+
+.cta-index button {
+  max-width: fit-content;
+}
+
+
+/* DOJO — MI HISTORIA */
+
+.mi-historia {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  width: 100%;
+  min-height: 400px;
+  padding: 30px 10px;
+  gap: 10px;
+}
+
+.mi-historia img {
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  height: 280px;
+  width: 280px;
+  object-fit: cover;
+}
+
+.texto-mi-historia {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 20px;
+  max-width: 520px;
+  line-height: 1.5;
+}
+
+
+/* 
+   =====================================================
+   DOJO — LOGROS
+   ===================================================== 
+*/
+
+.logros-credenciales {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.logros {
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 40px;
+  gap: 20px;
+}
+
+.logro {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 25%;
+  align-items: center;
+  line-height: 1.3;
+  white-space: nowrap;
+  padding: 30px 40px;
+  gap: 5px;
+}
+
+.logro h5 {
+  font-weight: bold;
+}
+
+.logro svg {
+  width: 50px;
+  height: 50px;
+  background-color: var(--fifth-color);
+  border-radius: 50%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* 
+   =====================================================
+   DOJO — LÍNEA DEL TIEMPO
+   ===================================================== 
+*/
+
+.hitos-camino {
+  text-align: center;
+  padding: 40px 20px 0;
+}
+
+.linea-del-tiempo {
+  padding: 40px;
+}
+
+.timeline-list {
+  position: relative;
+  width: 100%;
+  max-width: var(--max-width);
+  list-style: none;
+  padding: 20px 0;
+  margin: 0 auto;
+  counter-reset: timeline;
+}
+
+.timeline-list::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: var(--fourth-color);
+  border-radius: 3px;
+  z-index: 1;
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 40px 20px;
+  counter-increment: timeline;
+}
+
+.timeline-item:nth-child(odd)  { justify-content: flex-start; }
+.timeline-item:nth-child(even) { justify-content: flex-end; }
+
+.timeline-item::after {
+  content: counter(timeline);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--fourth-color);
+  color: var(--white-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  z-index: 4;
+  border: 6px solid var(--white-color);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+}
+
+.timeline-card {
+  width: 46%;
+  max-width: 600px;
+  background: rgba(236, 236, 236, 0.93);
+  border: 1px solid var(--black-color);
+  border-radius: var(--card-radius);
+  padding: 18px;
+  box-shadow: var(--shadow-lg);
+  z-index: 3;
+}
+
+.timeline-year {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #222;
+}
+
+.timeline-card p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+}
+
+
+/* 
+   =====================================================
+   DOJO — MOMENTOS
+   ===================================================== 
+*/
+
+.momentos-dojo {
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+}
+
+.momentos-img {
+  max-width: 100%;
+  margin: auto;
+  gap: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  grid-template-areas:
+    "grande top1 top2"
+    "grande ancha ancha";
+}
+
+.momento {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow-sm);
+  display: block;
+}
+
+.momento--grande { grid-area: grande; }
+.momento--top1   { grid-area: top1; }
+.momento--top2   { grid-area: top2; }
+.momento--ancha  { grid-area: ancha; }
+
+
+/* KARATE */
+
+
+.hero-karate {
+  width: 100%;
+  padding: 30px 20px;
+  background-color: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.hero-karate p {
+  width: 80%;
+  line-height: 1.6;
+}
+
+.content-karate {
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.tecnica-karate {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.tecnica-karate:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.tecnica-karate img {
+  height: 280px;
+  width: 500px;
+  border-radius: 15px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.texto-karate {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  line-height: 1.6;
+}
+
+.texto-karate h3 {
+  color: var(--fourth-color);
+  text-align: left;
+}
+
+.historia-filosofia {
+  width: 100%;
+  background-color: var(--primary-color);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.historia-filosofia h2 {
+  margin-bottom: 20px;
+}
+
+.historia-filosofia p {
+  width: 90%;
+  margin: 0 auto 20px;
+  line-height: 1.6;
+}
+
+.dojo-kun {
+  display: inline-block;
+  text-align: left;
+  list-style: disc;
+  list-style-position: outside;
+  padding-left: 20px;
+}
+
+.dojo-kun li {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.afiliacion {
+  width: 80%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+
+.img-afiliacion {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.img-afiliacion img {
+  height: 80px;
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.content-afiliacion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+
+/* KICKBOXING */
+
+
+.main-kickboxing {
+  background-color: var(--primary-color);
+}
+
+.hero-kickboxing {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.hero-kickboxing h2 {
+  text-align: center;
+}
+
+.hero-kickboxing p {
+  width: 60%;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.modalidades-kickboxing {
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.modalidades-kickboxing h3 {
+  margin-bottom: 20px;
+}
+
+.contenedor-modalidades {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px 20px;
+}
+
+.modalidad {
+  background-color: var(--fifth-color);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--black-color);
+  box-shadow: var(--shadow-sm);
+  padding: 20px;
+  flex: 1 1 260px;
+  max-width: 320px;
+  min-height: 240px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.4;
+}
+
+.modalidad h4 {
+  text-align: left;
+}
+
+.enfoque-competitivo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.enfoque-competitivo h2 {
+  margin-top: 30px;
+}
+
+.contenedor-enfoque-competitivo {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  padding: 30px 20px;
+  gap: 30px;
+  line-height: 1.6;
+}
+
+.contenedor-enfoque-competitivo img {
+  border-radius: var(--card-radius);
+  width: 350px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.metodo-entrenamiento {
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor-metodo-entrenamiento {
+  width: 90%;
+  background-color: var(--fifth-color);
+  border-radius: 15px;
+  border: 1px solid var(--black-color);
+  padding: 20px;
+  text-align: center;
+}
+
+.contenedor-metodo-entrenamiento h3 {
+  margin-bottom: 10px;
+}
+
+.contenedor-entrenamiento {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.entrenamiento-kickboxing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 0 30px;
+  line-height: 1.4;
+}
+
+.entrenamiento-kickboxing svg {
+  width: 50px;
+  height: 50px;
+  background-color: var(--white-color);
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: var(--shadow-sm);
+}
+
+.contenedor-boton-kickboxing {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}
+
+
+/* HORARIOS Y PRECIOS */
+
+
+.main-horarios-precios {
+  background-color: var(--primary-color);
+}
+
+.hero-horarios-precios {
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 30px;
+}
+
+.categoria-horarios-precios {
+  background-color: var(--black-color);
+  padding: 6px;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 6px;
+}
+
+.btn-categoria-adulto,
+.btn-categoria-infantil {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  color: var(--white-color);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.btn-categoria-adulto.is-active,
+.btn-categoria-infantil.is-active {
+  background: var(--primary-color);
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.horarios-section {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.horarios-section h3 {
+  margin-bottom: 25px;
+}
+
+.tabla-horarios {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--gray-light);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.tabla-horarios thead {
+  background: var(--black-color);
+  color: var(--white-color);
+}
+
+.tabla-horarios th,
+.tabla-horarios td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.tabla-horarios th {
+  font-weight: 600;
+}
+
+.tabla-horarios td {
+  color: #222;
+}
+
+.tabla-horarios tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-horarios tbody tr:last-child {
+  border-bottom: none;
+}
+
+.tabla-horarios tbody tr:hover {
+  background: var(--gray-mid);
+  transition: background 0.2s ease;
+}
+
+.tarifas-section {
+  width: 90%;
+  max-width: var(--max-width);
+  margin: 0 auto 30px;
+  padding: 20px 0 40px;
+  text-align: center;
+}
+
+.tarifas-section h3 {
+  margin-bottom: 30px;
+}
+
+.tarifas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.tarifa-card {
+  position: relative;
+  background: var(--white-color);
+  border: 1.5px solid #111;
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-md);
+  padding: 16px;
+  text-align: left;
+}
+
+.tarifa-card h4 {
+  text-align: left;
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.tarifa-sub {
+  font-size: 0.78rem;
+  line-height: 1.35;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.tarifa-precio {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin: 4px 0 12px;
+}
+
+.tarifa-precio span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.tarifa-beneficios {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 0.78rem;
+}
+
+.tarifa-beneficios li {
+  position: relative;
+  padding-left: 18px;
+  line-height: 1.25;
+}
+
+.tarifa-beneficios li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.btn-tarifa {
+  margin-top: auto;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background: var(--third-color);
+  border: 1.5px solid var(--secondary-color);
+  box-shadow: none;
+}
+
+.btn-tarifa:hover {
+  background: var(--secondary-color);
+}
+
+.tarifa-popular {
+  transform: translateY(-8px);
+  border: 2px solid var(--secondary-color);
+}
+
+.tarifa-badge {
+  position: absolute;
+  top: -10px;
+  right: 12px;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 999px;
+}
+
+.cuota-box {
+  margin: 22px auto 0;
+  background: var(--white-color);
+  border: 1.5px solid #111;
+  border-radius: var(--card-radius);
+  padding: 16px 18px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.cuota-box p {
+  line-height: 1.35;
+}
+
+.cuota-nota {
+  font-size: 0.78rem;
+  opacity: 0.85;
+  margin-top: 6px;
+}
+
+.cuota-precio {
+  color: var(--fourth-color);
+  font-weight: 800;
+}
+
+
+/* CONTACTO */
+
+
+.contacto-main {
+  padding: 48px 192px;
+  background-color: var(--primary-color);
+}
+
+.contenedor-contacto {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.form-contacto {
+  flex: 0 0 55%;
+}
+
+.info-contacto {
+  flex: 1;
+}
+
+/* Encabezado formulario */
+
+.texto-preform h2 {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 12px;
+}
+
+.texto-preform p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+
+/* Campos */
+
+.form-contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-contacto label {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.form-contacto input,
+.form-contacto textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--black-color);
+  border-radius: 4px;
+  background-color: var(--white-color);
+  font-size: 16px;
+}
+
+.form-contacto input::placeholder,
+.form-contacto textarea::placeholder {
+  color: var(--secondary-color);
+}
+
+.form-contacto textarea {
+  height: 114px;
+  resize: vertical;
+}
+
+.form-contacto button[type="submit"] {
+  margin-top: 16px;
+  width: 100%;
+  height: 46px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--black-color);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-contacto button[type="submit"]:hover {
+  background-color: #003a6b;
+}
+
+/* Info de contacto */
+
+.info-contacto h2 {
+  font-size: 24px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+.info-contacto ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.info-contacto ul li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.info-contacto ul li a {
+  color: var(--secondary-color);
+}
+
+.info-contacto iframe {
+  width: 100%;
+  height: 300px;
+  border: 1px solid var(--black-color);
+  border-radius: 6px;
+  display: block;
+  margin-bottom: 32px;
+}
+
+/* Redes sociales */
+
+.social-media-contacto {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.social-media-contacto a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.social-media-contacto a svg {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #3261a3;
+  padding: 12px;
+  stroke: var(--white-color);
+}
+
+/* Sobre Nosotros */
+
+.nosotros-contacto {
+  display: flex;
+  gap: 64px;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.nosotros-texto {
+  flex: 0 0 55%;
+}
+
+.nosotros-texto h2 {
+  font-size: 36px;
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.nosotros-texto p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.nosotros-imagenes {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.nosotros-imagenes img {
+  width: 100%;
+  height: 192px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1),
+              0px 4px 6px -4px rgba(0,0,0,0.1);
+}
+
+/* FAQ Acordeón */
+
+.preguntas-contacto {
+  max-width: 768px;
+  margin: 0 auto 80px;
+}
+
+.preguntas-contacto h2 {
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.faq-item {
+  border: 1px solid var(--black-color);
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.faq-item.is-open {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.faq-pregunta {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  background: var(--fifth-color);
+  border: none;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  color: var(--black-color);
+  box-shadow: none;
+}
+
+.faq-item.is-open .faq-pregunta {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.faq-pregunta svg {
+  flex-shrink: 0;
+  stroke: var(--black-color);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.is-open .faq-pregunta svg {
+  transform: rotate(180deg);
+}
+
+.faq-respuesta {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: var(--white-color);
+}
+
+.faq-respuesta p {
+  padding: 0 24px 24px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   PÁGINAS LEGALES
+   ========================================= */
+
+.main-legal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+.contenedor-legal {
+  max-width: var(--max-width);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contenedor-legal h1 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 12px;
+}
+
+.legal-actualizado {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: -20px;
+}
+
+.legal-seccion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  line-height: 1.7;
+}
+
+.legal-seccion h2 {
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+}
+
+.legal-seccion p,
+.legal-seccion li {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.legal-seccion ul {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  list-style: disc;
+}
+
+.legal-seccion a {
+  color: var(--primary-color);
+  text-decoration: underline;
+}
+
+.tabla-cookies {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.tabla-cookies th,
+.tabla-cookies td {
+  border: 1px solid var(--gray-mid);
+  padding: 10px 14px;
+  text-align: left;
+}
+
+.tabla-cookies thead {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.tabla-cookies tbody tr:nth-child(even) {
+  background-color: var(--gray-light);
+}
+
+
+/* ==========================================================
+   MENÚ HAMBURGUESA — Estilos base (siempre presentes)
+   ========================================================== */
+
+.hamburger {
+  display: none;            /* Oculto en desktop */
+  background: none;
+  border: none;
+  box-shadow: none;
+  padding: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  position: relative;
+}
+
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--black-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.hamburger span + span {
+  margin-top: 5px;
+}
+
+/* Animación X al abrir */
+.hamburger.is-active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.is-active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.is-active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Overlay oscuro detrás del menú */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-overlay.is-visible {
+  display: block;
+  opacity: 1;
+}
+
+
+/* ==========================================================
+   RESPONSIVE — Tablet (max 900px)
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+  /* --- Navegación hamburguesa --- */
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    height: 100dvh;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    background: var(--white-color);
+    padding: 80px 0 40px;
+    gap: 0;
+    z-index: 1000;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+    transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+  }
+
+  .nav-links.is-open {
+    right: 0;
+  }
+
+  .nav-links li {
+    border-bottom: 1px solid var(--gray-mid);
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 16px 24px;
+    font-size: 1rem;
+    transition: background 0.2s ease;
+  }
+
+  .nav-links a:hover,
+  .nav-links a:focus {
+    background: var(--gray-light);
+  }
+
+  .nav-links a.active {
+    background: var(--fifth-color);
+    border-left: 4px solid var(--primary-color);
+  }
+
+  /* --- Footer --- */
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 20px 16px;
+    font-size: 0.85rem;
+  }
+
+  .footer-content > p:first-child,
+  .footer-content > p:last-child {
+    justify-self: center;
+    text-align: center;
+  }
+
+  .footer-links-legal {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* --- Index: Principios --- */
+
+  .principios-lista {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .principio {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* --- Index: Programas --- */
+
+  .programa {
+    flex: 1 1 100%;
+  }
+
+  /* --- Dojo: Mi Historia --- */
+
+  .mi-historia {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+
+  .mi-historia img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .texto-mi-historia {
+    align-items: center;
+    text-align: center;
+  }
+
+  /* --- Dojo: Logros --- */
+
+  .logros {
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .logro {
+    flex: 1 1 40%;
+    padding: 20px;
+    white-space: normal;
+  }
+
+  /* --- Dojo: Timeline — lineal en tablet --- */
+
+  .linea-del-tiempo {
+    padding: 20px 10px;
+  }
+
+  .timeline-list {
+    padding-left: 30px;
+  }
+
+  .timeline-list::before {
+    left: 6px;
+    transform: none;
+  }
+
+  .timeline-item {
+    justify-content: flex-start !important;
+    padding: 20px 0 20px 20px;
+  }
+
+  .timeline-item::after {
+    left: 6px;
+    top: 28px;
+    transform: translate(-50%, 0);
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+
+  .timeline-card {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  /* --- Dojo: Momentos (grid simplificado) --- */
+
+  .momentos-img {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 200px 200px;
+    grid-template-areas:
+      "grande grande"
+      "top1   top2";
+    padding: 10px;
+    gap: 12px;
+  }
+
+  .momento--ancha {
+    display: none;
+  }
+
+  /* --- Karate --- */
+
+  .hero-karate p {
+    width: 95%;
+  }
+
+  .content-karate {
+    width: 95%;
+    padding: 30px 16px;
+  }
+
+  .tecnica-karate,
+  .tecnica-karate:nth-child(even) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .tecnica-karate img {
+    width: 100%;
+    max-width: 500px;
+    height: 220px;
+  }
+
+  .texto-karate h3 {
+    text-align: center;
+  }
+
+  .afiliacion {
+    width: 95%;
+  }
+
+  /* --- Kickboxing --- */
+
+  .hero-kickboxing p {
+    width: 90%;
+  }
+
+  .modalidad h4 {
+    text-align: center;
+  }
+
+  .contenedor-enfoque-competitivo {
+    width: 90%;
+    flex-direction: column;
+  }
+
+  .contenedor-enfoque-competitivo img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .contenedor-entrenamiento {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .entrenamiento-kickboxing {
+    max-width: 400px;
+    padding: 0 10px;
+  }
+
+  /* --- Horarios y Precios --- */
+
+  .horarios-section {
+    width: 95%;
+  }
+
+  .tarifas-section {
+    width: 95%;
+  }
+
+  .tarifas-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tarifa-popular {
+    transform: none;
+  }
+
+  /* --- Contacto --- */
+
+  .contacto-main {
+    padding: 32px 20px;
+  }
+
+  .contenedor-contacto {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-contacto {
+    flex: unset;
+    width: 100%;
+  }
+
+  .info-contacto {
+    flex: unset;
+    width: 100%;
+  }
+
+  .nosotros-contacto {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .nosotros-texto {
+    flex: unset;
+    width: 100%;
+  }
+
+  .nosotros-texto h2 {
+    font-size: 28px;
+  }
+
+  .nosotros-imagenes {
+    flex: unset;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .preguntas-contacto {
+    margin: 0 auto 40px;
+    padding: 0 10px;
+  }
+
+  .preguntas-contacto h2 {
+    font-size: 28px;
+  }
+}
+
+
+/* ==========================================================
+   RESPONSIVE — Móvil (max 600px)
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+  /* --- Hero index --- */
+
+  .hero {
+    min-height: 300px;
+    height: 50vh;
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  /* --- Principios --- */
+
+  .principios-dojo {
+    padding: 30px 16px;
+  }
+
+  /* --- Dojo: Logros — una columna --- */
+
+  .logros {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logro {
+    flex: unset;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  /* --- Dojo: Momentos — una columna --- */
+
+  .momentos-img {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+      "grande"
+      "top1"
+      "top2";
+  }
+
+  /* --- Dojo: Testimonios --- */
+
+  .testimonio {
+    max-height: none;
+  }
+
+  /* --- Karate --- */
+
+  .tecnica-karate img {
+    height: 180px;
+  }
+
+  .content-karate {
+    width: 100%;
+    padding: 20px 12px;
+  }
+
+  .historia-filosofia p {
+    width: 100%;
+    padding: 0 8px;
+  }
+
+  .afiliacion {
+    width: 100%;
+    padding: 30px 12px;
+  }
+
+  .img-afiliacion {
+    align-items: center;
+  }
+
+  /* --- Kickboxing --- */
+
+  .hero-kickboxing p {
+    width: 100%;
+  }
+
+  .contenedor-enfoque-competitivo {
+    width: 100%;
+    padding: 20px 12px;
+  }
+
+  .modalidad {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .modalidad h4 {
+    text-align: center;
+  }
+
+  .contenedor-metodo-entrenamiento {
+    width: 100%;
+    border-radius: 0;
+  }
+
+  /* --- Horarios tabla --- */
+
+  .horarios-section {
+    width: 100%;
+  }
+
+  .tabla-horarios th,
+  .tabla-horarios td {
+    font-size: 12px;
+    padding: 10px 8px;
+  }
+
+  /* --- Contacto --- */
+
+  .contacto-main {
+    padding: 24px 12px;
+  }
+
+  .info-contacto iframe {
+    height: 220px;
+    
+  }
+
+  .social-media-contacto {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .nosotros-imagenes {
+    grid-template-columns: 1fr;
+  }
+
+  .nosotros-imagenes img {
+    height: 220px;
+    width: 100%;
+  }
+
+  .nosotros-texto h2 {
+    font-size: 24px;
+  }
+
+  .preguntas-contacto h2 {
+    font-size: 24px;
+  }
+
+  .faq-pregunta {
+    font-size: 15px;
+    padding: 18px 16px;
+  }
+
+  .faq-respuesta p {
+    padding: 0 16px 18px;
+    font-size: 14px;
+  }
+
+  .contenedor-legal h1 {
+    font-size: 1.5rem;
+  }
+
+  .tabla-cookies {
+    font-size: 0.8rem;
+  }
+
+  .tabla-cookies th,
+  .tabla-cookies td {
+    padding: 8px;
+  }
+}

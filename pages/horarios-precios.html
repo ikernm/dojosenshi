@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+
+    <head>
+
+        <title>Horarios y precios | Dojo Senshi</title>
+
+        <!-- SEO PARA LA PÁGINA -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Ana Ibarrondo">
+        <meta name="title" content="Dojo Senshi - Escuela de Karate en Vitoria">
+        <meta name="description" 
+        content="Senshi Dojo es una escuela de karate donde se transmiten los valores tradicionales.">
+        <meta name="keywords" content="karate, vitoria karate, campeonato karate, escuela karate">
+        <meta name="theme-color" content="#09f">
+        <meta name="robots" content="index, follow">
+
+        <!--SOCIAL / OPEN GRAPH-->
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="es_ES">
+        <meta property="og:title" content="[Dojo Karate - Vitoria | Dojo Senshi]">
+        <meta property="og:description" content="Senshi Dojo es una escuela de karate donde se transmiten los valores tradicionales.">
+        <meta property="og:url" content="https://dojosenshigym.com/">
+        <meta property="og:site_name" content="[Dojo Senshi]">
+        <meta property="og:image" content="https://dojosenshigym.com/logo-image.jpg">
+
+        <!-- CSS + ICONO DE LA WEB -->
+        <link rel="icon" type="image/png" href="../assets/images/icon.png">
+        <link rel="canonical" href="https://dojosenshigym.com">
+        <link rel="stylesheet" href="../assets/css/reseteo.css">
+        <link rel="stylesheet" href="../assets/css/styles.css">
+
+        <!--X CARDS-->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="[Dojo Karate - Vitoria | Dojo Senshi]">
+        <meta name="twitter:description" content="Senshi Dojo es una escuela de karate donde se transmiten los valores tradicionales.">
+        <meta name="twitter:image" content="https://dojosenshigym.com/logo-image.jpg">
+        <meta name="twitter:site" content="@dojosenshigym">
+
+        <!--PRIVACIDAD--> 
+        <meta name="referrer" content="strict-origin-when-cross-origin">
+        
+        <!--JAVASCRIPT--> 
+        <script src="../assets/js/index.js" defer></script>
+
+    </head>
+
+    <body>
+
+        <header>
+
+            <nav>
+                <div class="logo">
+                    <a href="../index.html"><img src="../assets/images/icon.png" alt="Logo Dojo Senshi"></a>
+                </div>
+
+                <button class="hamburger" aria-label="Abrir menú" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <ul class="nav-links">
+                    <li><a href="../index.html">Inicio</a></li>
+                    <li><a href="dojo.html">Dojo</a></li>
+                    <li><a href="karate.html">Karate</a></li>
+                    <li><a href="kickboxing.html">Kickboxing</a></li>
+                    <li><a href="horarios-precios.html">Horarios y Precios</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-overlay"></div>
+
+        </header>
+
+        <main class="main-horarios-precios">
+
+            <section class="hero-horarios-precios">
+                
+                <h2>Horarios y Precios</h2>
+                <p>Elige una categoría para ver los detalles.</p>
+
+                <div class="categoria-horarios-precios">
+                    <button id="btnAdultos" class="btn-categoria-adulto is-active" type="button">Adultos</button>
+                    <button id="btnInfantil" class="btn-categoria-infantil" type="button">Infantil</button>
+                </div>
+                
+            </section>
+
+            <section class="horarios-section">
+                <h3 id="tituloHorarios">Horarios Adultos</h3>
+
+                <table class="tabla-horarios">
+                    <thead>
+                        <tr>
+                            <th>Clase</th>
+                            <th>Día</th>
+                            <th>Hora</th>
+                        </tr>
+                    </thead>
+
+                    <!-- TABLA ADULTO -->
+                    <tbody id="tablaAdultos">
+                        <tr>
+                            <td>Karate para principiantes</td>
+                            <td>Lunes</td>
+                            <td>18:00 - 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Kickboxing avanzado</td>
+                            <td>Miércoles</td>
+                            <td>18:00 - 19:00</td>
+                        </tr>
+                        <tr>
+                            <td>Defensa personal</td>
+                            <td>Martes</td>
+                            <td>19:30 - 21:00</td>
+                        </tr>
+                        <tr>
+                            <td>Karate avanzado</td>
+                            <td>Jueves</td>
+                            <td>19:30 - 21:00</td>
+                        </tr>
+                    </tbody>
+
+                    <!-- TABLA INFANTIL -->
+                    <tbody id="tablaInfantil" class="is-hidden">
+                        <tr>
+                            <td>Karate Infantil</td>
+                            <td>Lunes y Miércoles</td>
+                            <td>17:00 - 18:00</td>
+                        </tr>
+                        <tr>
+                            <td>Kickboxing Junior</td>
+                            <td>Martes</td>
+                            <td>17:00 - 18:00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="tarifas-section">
+
+                <h3 id="tituloTarifas">Tarifas Adultos</h3>
+
+                <!-- TARIFAS ADULTOS -->
+                <div id="tarifasAdultos" class="tarifas-grid">    
+
+                    <article class="tarifa-card">
+                        <h4>Plan Guerrero</h4>
+                        <p class="tarifa-sub">Ideal para empezar tu camino marcial.</p>
+                        <p class="tarifa-precio">$80 <span>/ mes</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>2 clases por semana</li>
+                            <li>Acceso a instalaciones</li>
+                        </ul>
+                    </article>
+
+                    <article class="tarifa-card tarifa-popular">
+                        <div class="tarifa-badge">MÁS POPULAR</div>
+                        <h4>Plan Senshi</h4>
+                        <p class="tarifa-sub">Entrenamiento sin límites para el guerrero dedicado.</p>
+                        <p class="tarifa-precio">$150 <span>/ mes</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>Clases ilimitadas</li>
+                            <li>Acceso a instalaciones</li>
+                            <li>Descuento en seminarios</li>
+                        </ul>
+                    </article>
+
+                    <article class="tarifa-card">
+                        <h4>Descuentos</h4>
+                        <p class="tarifa-sub">Apoyamos a nuestra comunidad.</p>
+                        <p class="tarifa-precio">10-15% <span>OFF</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>Descuento para familias</li>
+                            <li>Descuento para estudiantes</li>
+                            <li>Descuento pago anual</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <!-- TARIFAS INFANTIL -->
+                <div id="tarifasInfantil" class="tarifas-grid is-hidden">
+                    
+                    <article class="tarifa-card">
+                        <h4>Plan Mini Samurai</h4>
+                        <p class="tarifa-sub">Iniciación, disciplina y diversión.</p>
+                        <p class="tarifa-precio">$60 <span>/ mes</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>2 clases por semana</li>
+                            <li>Grupos reducidos</li>
+                        </ul>
+                    </article>
+
+                    <article class="tarifa-card tarifa-popular">
+                        <div class="tarifa-badge">RECOMENDADO</div>
+                        <h4>Plan Junior Senshi</h4>
+                        <p class="tarifa-sub">Mejora técnica y hábitos sólidos.</p>
+                        <p class="tarifa-precio">$90 <span>/ mes</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>3 clases por semana</li>
+                            <li>Seguimiento de progreso</li>
+                            <li>Acceso a eventos</li>
+                        </ul>
+                    </article>
+
+                    <article class="tarifa-card">
+                        <h4>Descuentos Infantil</h4>
+                        <p class="tarifa-sub">Opciones para familias.</p>
+                        <p class="tarifa-precio">10% <span>OFF</span></p>
+                        <ul class="tarifa-beneficios">
+                            <li>Segundo hermano con descuento</li>
+                            <li>Pago trimestral con rebaja</li>
+                        </ul>
+                    </article>
+
+                </div>
+
+                <div class="cuota-box">
+                    <p><strong>Cuota de inscripción única:</strong> <span class="cuota-precio">$50</span> (incluye tu primer uniforme).</p>
+                    <p class="cuota-nota">Para más información sobre descuentos o planes personalizados, no dudes en ponerte en contacto.</p>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>Dojo Senshi</p>
+                <ul class="footer-links-legal">
+                    <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
+                    <li><a href="politica-cookies.html">Política de Cookies</a></li>
+                </ul>
+                <p>&copy; 2025 Dojo Senshi. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </body>
+
+</html>
