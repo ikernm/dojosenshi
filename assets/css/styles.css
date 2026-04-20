@@ -321,10 +321,9 @@ nav {
   background-color: var(--fifth-color);
   border: 1.5px solid var(--black-color);
   border-radius: 8px;
-  padding: 30px 10px;
+  padding: 20px 10px;
   gap: 15px;
   flex: 1 1 320px;
-  max-height: 300px;
   line-height: 1.5;
 }
 
@@ -557,6 +556,7 @@ nav {
   grid-template-areas:
     "grande top1 top2"
     "grande ancha ancha";
+  overflow: hidden;
 }
 
 .momento {
@@ -607,6 +607,7 @@ nav {
   flex-direction: row;
   align-items: center;
   gap: 20px;
+  overflow: hidden;
 }
 
 .tecnica-karate:nth-child(even) {
@@ -735,7 +736,7 @@ nav {
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 30px 20px;
+  padding: 20px 20px;
 }
 
 .modalidad {
@@ -766,7 +767,7 @@ nav {
 }
 
 .enfoque-competitivo h2 {
-  margin-top: 30px;
+  margin-top: 10px;
 }
 
 .contenedor-enfoque-competitivo {
@@ -1472,6 +1473,46 @@ nav {
   opacity: 1;
 }
 
+/* =====================================================
+   ANIMACIONES — HOVER EN TARJETAS
+   ===================================================== */
+
+.principio,
+.testimonio,
+.tarifa-card,
+.modalidad,
+.timeline-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.principio:hover,
+.testimonio:hover,
+.tarifa-card:hover,
+.modalidad:hover,
+.timeline-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.18);
+}
+
+.tecnica-karate img,
+.nosotros-imagenes img,
+.momento {
+    transition: transform 0.4s ease;
+    overflow: hidden;
+}
+
+.tecnica-karate img:hover,
+.nosotros-imagenes img:hover,
+.momento:hover {
+    transform: scale(1.03);
+}
+
+
+
+
+
+
+
 
 /* ==========================================================
    RESPONSIVE — Tablet (max 900px)
@@ -1873,9 +1914,14 @@ nav {
     padding: 20px 12px;
   }
 
+  .contenedor-modalidades {
+    padding: 5px;
+  }
+
   .modalidad {
     flex: 1 1 100%;
     max-width: 100%;
+    min-height: unset;
   }
 
   .modalidad h4 {
