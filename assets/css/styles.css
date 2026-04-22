@@ -105,6 +105,8 @@ nav {
 .nav-links a.active {
   font-weight: bold;
   color: var(--primary-color);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 2px;
 }
 
 
