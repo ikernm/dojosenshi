@@ -81,14 +81,15 @@
 
                 <section class="form-contacto">
                     <div class="texto-preform">
-                        <h2>Contacto</h2>
+                        <h1>Contacto</h1>
                         <p>
                             Si deseas ponerte en contacto con nosotros, por favor completa el siguiente formulario:
                         </p>
                     </div>
                     <div>
-                        <form name="contacto" action="/src/contacto.html" method="POST" netlify>
+                        <form name="contacto" action="/pages/contacto.html" method="POST" netlify data-netlify-honeypot="bot-field">
                             <input type="hidden" name="form-name" value="contacto">
+                            <p class="hidden"><label>No rellenar: <input name="bot-field"></label></p>
                             <label for="nombre">Nombre:</label>
                             <input type="text" name="nombre" placeholder="Nombre" id="nombre" required>
                             <label for="email">Email:</label>
@@ -124,7 +125,7 @@
 
                     <div class="social-media-contacto">
 
-                        <a href="https://www.facebook.com/dojosenshi" target="_blank">
+                        <a href="https://www.facebook.com/dojosenshi" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
@@ -132,7 +133,7 @@
                             Facebook
                         </a>
 
-                        <a href="https://www.instagram.com/dojosenshi" target="_blank">
+                        <a href="https://www.instagram.com/dojosenshi" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
@@ -142,7 +143,7 @@
                             Instagram
                         </a>
 
-                        <a href="https://www.twitter.com/dojosenshi" target="_blank">
+                        <a href="https://www.twitter.com/dojosenshi" target="_blank" rel="noopener noreferrer">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                                 <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
@@ -174,10 +175,10 @@
                 </div>
 
                 <div class="nosotros-imagenes">
-                    <img src="../assets/images/dojosenshi1.jpg" alt="Instalaciones Dojo Senshi">
-                    <img src="../assets/images/dojosenshi2.jpg" alt="Tatami Dojo Senshi">
-                    <img src="../assets/images/dojosenshi3.jpg" alt="Entrada Dojo Senshi">
-                    <img src="../assets/images/dojosenshi4.jpg" alt="Ana Ibarrondo">
+                    <img src="../assets/images/dojosenshi1.jpg" alt="Instalaciones Dojo Senshi" loading="lazy">
+                    <img src="../assets/images/dojosenshi2.jpg" alt="Tatami Dojo Senshi" loading="lazy">
+                    <img src="../assets/images/dojosenshi3.jpg" alt="Entrada Dojo Senshi" loading="lazy">
+                    <img src="../assets/images/dojosenshi4.jpg" alt="Ana Ibarrondo" loading="lazy">
                 </div>
 
             </section>
@@ -250,7 +251,7 @@
                     <li><a href="politica-privacidad.html">Política de Privacidad</a></li>
                     <li><a href="politica-cookies.html">Política de Cookies</a></li>
                 </ul>
-                <p>&copy; 2025 Dojo Senshi. Todos los derechos reservados.</p>
+                <p>&copy; 2026 Dojo Senshi. Todos los derechos reservados.</p>
             </div>
         </footer>
 

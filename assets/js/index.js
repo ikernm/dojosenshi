@@ -34,6 +34,14 @@ if (hamburger && navLinks) {
 }
 
 
+// ENLACE ACTIVO EN NAV
+const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+document.querySelectorAll('.nav-links a').forEach(link => {
+  const linkFile = link.getAttribute('href').split('/').pop();
+  if (linkFile === currentPath) link.classList.add('active');
+});
+
+
 // PRECIOS Y HORARIOS
 const btnAdultos = document.getElementById("btnAdultos");
 const btnInfantil = document.getElementById("btnInfantil");
