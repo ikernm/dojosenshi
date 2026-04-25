@@ -48,7 +48,9 @@ main {
   align-items: center;
 }
 
-button {
+button,
+.btn {
+  display: inline-block;
   cursor: pointer;
   color: var(--white-color);
   background-color: var(--primary-color);
@@ -58,14 +60,18 @@ button {
   font-size: 0.8rem;
   font-weight: bold;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  text-decoration: none;
 }
 
 button:hover,
-button:focus {
+button:focus,
+.btn:hover,
+.btn:focus {
   background-color: var(--third-color);
 }
 
-button:active {
+button:active,
+.btn:active {
   transform: scale(0.96);
 }
 
@@ -105,8 +111,13 @@ nav {
 .nav-links a.active {
   font-weight: bold;
   color: var(--primary-color);
-  border-bottom: 2px solid var(--primary-color);
-  padding-bottom: 2px;
+}
+
+@media (min-width: 901px) {
+  .nav-links a.active {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 2px;
+  }
 }
 
 
@@ -357,7 +368,8 @@ nav {
   border-bottom: 1px solid var(--black-color);
 }
 
-.cta-index button {
+.cta-index button,
+.cta-index .btn {
   max-width: fit-content;
 }
 
@@ -423,7 +435,7 @@ nav {
   gap: 5px;
 }
 
-.logro h5 {
+.logro h3 {
   font-weight: bold;
 }
 
@@ -631,7 +643,7 @@ nav {
   line-height: 1.6;
 }
 
-.texto-karate h3 {
+.texto-karate h2 {
   color: var(--fourth-color);
   text-align: left;
 }
@@ -713,7 +725,7 @@ nav {
   gap: 20px;
 }
 
-.hero-kickboxing h2 {
+.hero-kickboxing h1 {
   text-align: center;
 }
 
@@ -729,7 +741,7 @@ nav {
   text-align: center;
 }
 
-.modalidades-kickboxing h3 {
+.modalidades-kickboxing h2 {
   margin-bottom: 20px;
 }
 
@@ -756,7 +768,7 @@ nav {
   line-height: 1.4;
 }
 
-.modalidad h4 {
+.modalidad h3 {
   text-align: left;
 }
 
@@ -804,7 +816,7 @@ nav {
   text-align: center;
 }
 
-.contenedor-metodo-entrenamiento h3 {
+.contenedor-metodo-entrenamiento h2 {
   margin-bottom: 10px;
 }
 
@@ -893,7 +905,7 @@ nav {
   text-align: center;
 }
 
-.horarios-section h3 {
+.horarios-section h2 {
   margin-bottom: 25px;
 }
 
@@ -947,7 +959,7 @@ nav {
   text-align: center;
 }
 
-.tarifas-section h3 {
+.tarifas-section h2 {
   margin-bottom: 30px;
 }
 
@@ -968,7 +980,7 @@ nav {
   text-align: left;
 }
 
-.tarifa-card h4 {
+.tarifa-card h3 {
   text-align: left;
   font-size: 0.95rem;
   margin-bottom: 6px;
@@ -1577,8 +1589,6 @@ nav {
   .nav-links a.active {
     background: var(--fifth-color);
     border-left: 4px solid var(--primary-color);
-    border-bottom: none;
-    padding-bottom: 0;
   }
 
   /* --- Footer --- */
@@ -1725,7 +1735,7 @@ nav {
     height: 220px;
   }
 
-  .texto-karate h3 {
+  .texto-karate h2 {
     text-align: center;
   }
 
@@ -1739,7 +1749,7 @@ nav {
     width: 90%;
   }
 
-  .modalidad h4 {
+  .modalidad h3 {
     text-align: center;
   }
 
@@ -1932,7 +1942,7 @@ nav {
     min-height: unset;
   }
 
-  .modalidad h4 {
+  .modalidad h3 {
     text-align: center;
   }
 

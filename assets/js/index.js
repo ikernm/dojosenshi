@@ -8,6 +8,7 @@ if (hamburger && navLinks) {
   function toggleMenu() {
     const isOpen = navLinks.classList.toggle('is-open');
     hamburger.classList.toggle('is-active');
+    hamburger.setAttribute('aria-expanded', isOpen);
     if (navOverlay) navOverlay.classList.toggle('is-visible');
     document.body.style.overflow = isOpen ? 'hidden' : '';
   }
@@ -15,6 +16,7 @@ if (hamburger && navLinks) {
   function closeMenu() {
     navLinks.classList.remove('is-open');
     hamburger.classList.remove('is-active');
+    hamburger.setAttribute('aria-expanded', 'false');
     if (navOverlay) navOverlay.classList.remove('is-visible');
     document.body.style.overflow = '';
   }
