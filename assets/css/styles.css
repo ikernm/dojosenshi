@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* VARIABLES */
 
 :root {
@@ -13,15 +15,14 @@
   --shadow-sm:        0 1px 2px rgba(0, 0, 0, 0.38);
   --shadow-md:        0 6px 14px rgba(0, 0, 0, 0.18);
   --shadow-lg:        0 6px 18px rgba(0, 0, 0, 0.06);
-  --font-family:      Arial, Helvetica, sans-serif;
+  --font-family:        'Roboto', Arial, sans-serif;
+  --font-family-titles: 'Montserrat', Arial, sans-serif;
   --font-size-base:   16px;
   --card-radius:      10px;
   --max-width:        1000px;
 }
 
-
 /* RESET BASE */
-
 
 body {
   font-family: var(--font-family);
@@ -41,6 +42,10 @@ h1 { font-size: 2.5rem;  font-weight: bold; }
 h2 { font-size: 1.5rem;  font-weight: bold; }
 h3 { font-size: 1.25rem; font-weight: bold; }
 h4 { font-size: 1rem;    font-weight: bold; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-family-titles);
+}
 
 main {
   display: flex;
@@ -178,6 +183,7 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 17%;
   z-index: 0;
 }
 
@@ -190,9 +196,10 @@ nav {
   gap: 20px;
   padding: 0 20px;
   max-width: 650px;
-  color: var(--white-color);
+  color: rgb(13, 89, 175);
   text-align: center;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.65);
+  font-weight: bold;
 }
 
 .hero-overlay h1 {
@@ -665,19 +672,6 @@ nav {
   line-height: 1.6;
 }
 
-.dojo-kun {
-  display: inline-block;
-  text-align: left;
-  list-style: disc;
-  list-style-position: outside;
-  padding-left: 20px;
-}
-
-.dojo-kun li {
-  margin-bottom: 10px;
-  line-height: 1.5;
-}
-
 .afiliacion {
   width: 80%;
   padding: 40px 20px;
@@ -769,7 +763,7 @@ nav {
 }
 
 .modalidad h3 {
-  text-align: left;
+  text-align: center;
 }
 
 .enfoque-competitivo {
@@ -970,6 +964,13 @@ nav {
   align-items: stretch;
 }
 
+.tarifas-grid--dos {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .tarifa-card {
   position: relative;
   background: var(--white-color);
@@ -1081,11 +1082,6 @@ nav {
   margin-top: 6px;
 }
 
-.cuota-precio {
-  color: var(--fourth-color);
-  font-weight: 800;
-}
-
 
 /* CONTACTO */
 
@@ -1112,10 +1108,10 @@ nav {
 
 /* Encabezado formulario */
 
-.texto-preform h2 {
+.texto-preform h1 {
   font-size: 24px;
   text-align: left;
-  margin-bottom: 12px;
+  margin-bottom: 24px;
 }
 
 .texto-preform p {
@@ -1700,17 +1696,19 @@ nav {
 
   .momentos-img {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 200px 200px;
+    grid-template-rows: 200px 200px 200px;
     grid-template-areas:
       "grande grande"
-      "top1   top2";
+      "top1   top2"
+      "ancha ancha";
     padding: 10px;
     gap: 12px;
   }
-
+/*
   .momento--ancha {
     display: none;
   }
+*/
 
   /* --- Karate --- */
 
