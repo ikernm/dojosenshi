@@ -64,7 +64,7 @@
                     <li><a href="sobre-nosotros.html">Dojo</a></li>
                     <li><a href="karate-vitoria.html">Karate</a></li>
                     <li><a href="kickboxing-vitoria.html">Kickboxing</a></li>
-                    <li><a href="clases-karate-vitoria.html">Horarios y Precios</a></li>
+                    <li><a href="clases-karate-kickboxing-vitoria.html">Horarios y Precios</a></li>
                     <li><a href="contacto.html">Contacto</a></li>
                 </ul>
             </nav>
@@ -85,9 +85,10 @@
                         </p>
                     </div>
                     <div>
-                        <form name="contacto" action="/pages/contacto.html" method="POST" netlify data-netlify-honeypot="bot-field">
-                            <input type="hidden" name="form-name" value="contacto">
-                            <p class="hidden"><label>No rellenar: <input name="bot-field"></label></p>
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="REEMPLAZA_CON_TU_ACCESS_KEY">
+                            <input type="hidden" name="subject" value="Nuevo mensaje desde Dojo Senshi">
+                            <input type="hidden" name="from_name" value="Dojo Senshi">
                             <label for="nombre">Nombre:</label>
                             <input type="text" name="nombre" placeholder="Nombre" id="nombre" autocomplete="name" required>
                             <label for="email">Email:</label>

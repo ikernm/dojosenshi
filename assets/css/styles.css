@@ -1920,7 +1920,8 @@ nav {
     grid-template-areas:
       "grande"
       "top1"
-      "top2";
+      "top2"
+      "ancha";
   }
 
   /* --- Dojo: Testimonios --- */
