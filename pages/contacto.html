@@ -85,7 +85,10 @@
                         </p>
                     </div>
                     <div>
-                        <form action="mailto:info@dojosenshi.es" method="POST" enctype="text/plain">
+                        <form action="https://api.web3forms.com/submit" method="POST">
+                            <input type="hidden" name="access_key" value="6abd4c37-57ed-45ae-9157-b5d544e36550">
+                            <input type="hidden" name="subject" value="Nuevo mensaje desde Dojo Senshi">
+                            <input type="hidden" name="from_name" value="Dojo Senshi">
                             <label for="nombre">Nombre:</label>
                             <input type="text" name="nombre" placeholder="Nombre" id="nombre" autocomplete="name" required>
                             <label for="email">Email:</label>
@@ -98,6 +101,11 @@
                             <button type="submit" id="btn-submit">Enviar Mensaje</button>
 
                         </form>
+
+                        <div id="form-aviso" class="form-aviso is-hidden" role="alert">
+                            <p id="form-aviso-texto"></p>
+                        </div>
+
                     </div>
 
                 </section>

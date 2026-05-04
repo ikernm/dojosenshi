@@ -83,6 +83,49 @@ if (btnAdultos && btnInfantil) {
     btnInfantil.addEventListener("click", mostrarInfantil);
 }
 
+// FORMULARIO DE CONTACTO
+const formContacto = document.querySelector('form[action="https://api.web3forms.com/submit"]');
+
+if (formContacto) {
+    formContacto.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const btn = document.getElementById('btn-submit');
+        const aviso = document.getElementById('form-aviso');
+        const avisoTexto = document.getElementById('form-aviso-texto');
+
+        btn.disabled = true;
+        btn.textContent = 'Enviando...';
+        aviso.classList.add('is-hidden');
+        aviso.classList.remove('form-aviso--ok', 'form-aviso--error');
+
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: new FormData(formContacto)
+            });
+            const data = await response.json();
+
+            if (data.success) {
+                avisoTexto.textContent = '¡Mensaje enviado! Te contactaremos lo antes posible.';
+                aviso.classList.add('form-aviso--ok');
+                formContacto.reset();
+            } else {
+                avisoTexto.textContent = 'Ha ocurrido un error. Por favor, inténtalo de nuevo.';
+                aviso.classList.add('form-aviso--error');
+            }
+        } catch {
+            avisoTexto.textContent = 'Sin conexión. Comprueba tu red e inténtalo de nuevo.';
+            aviso.classList.add('form-aviso--error');
+        }
+
+        aviso.classList.remove('is-hidden');
+        btn.disabled = false;
+        btn.textContent = 'Enviar Mensaje';
+    });
+}
+
+
  // FAQ ACORDEÓN
 const faqItems = document.querySelectorAll('.faq-item');
 

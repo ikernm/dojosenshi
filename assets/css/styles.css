@@ -1199,6 +1199,26 @@ nav {
   background-color: #003a6b;
 }
 
+.form-aviso {
+  margin-top: 16px;
+  padding: 14px 18px;
+  border-radius: var(--card-radius);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.form-aviso--ok {
+  background-color: #e6f4ea;
+  color: #1e7e34;
+  border: 1px solid #b7dfbe;
+}
+
+.form-aviso--error {
+  background-color: #fdecea;
+  color: #b71c1c;
+  border: 1px solid #f5c6c6;
+}
+
 /* Info de contacto */
 
 .info-contacto h2 {
